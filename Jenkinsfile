@@ -25,6 +25,8 @@ pipeline {
                     sleep 5
                     echo "This is a DEPLOY stage"
                 '''
+            }
+        }
                 stage('POST DEPLOY') {
             steps{
                 sh '''
