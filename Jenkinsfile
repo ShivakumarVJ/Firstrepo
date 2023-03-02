@@ -74,4 +74,23 @@ pipeline {
     }
  }
 
+  post {
 
+        always {
+            echo "This will run always"
+        }
+
+        success {
+            echo "This $JOB_NAME SUCCESS - $BUILD_NUMBER $BUILD_ID $BUILD_DISPLAY_NAME"
+        }
+
+        unstable {
+            echo "This $JOB_NAME UNSTABLE - $BUILD_NUMBER $BUILD_ID $BUILD_DISPLAY_NAME"
+        }
+
+        failure {
+            echo "This $JOB_NAME FAILED - $BUILD_NUMBER $BUILD_ID $BUILD_DISPLAY_NAME"
+        }
+
+    }
+}
