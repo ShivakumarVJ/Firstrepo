@@ -1,11 +1,11 @@
 pipeline {
     agent any 
-    parameters {
-        string defaultvalue: 'main' name: 'BRANCH', trim: true 
+     parameters {
+        string defaultValue: 'main', name: 'BRANCH', trim: true
     }
-    
+
     environment {
-        BRANCH_NAME= "${BRANCH}"
+        BRANCH_NAME = "${BRANCH}"
     }
     
     stages{
@@ -24,23 +24,6 @@ pipeline {
                     sleep 6
                     echo "This is a TEST stage"
                 '''
-            }
-        }
-
-        stage('DEPLOY') {
-            steps{
-                sh '''
-                    sleep 5
-                    echo "This is a DEPLOY stage"
-                '''
-            }
-        }
-                stage('POST DEPLOY') {
-            steps{
-                sh '''
-                    sleep 6
-                    echo "This is a POST DEPLOY stage"
-                    '''
             }
         }
     }
