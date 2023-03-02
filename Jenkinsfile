@@ -1,18 +1,17 @@
 pipeline {
     agent any 
     parameters {
-        string defaultValue: 'shivu', description: 'Choose your name', name: 'name'
-        
-        string defaultValue: 'Hubli', description: 'Choose your location', name: 'location'
-
+        string defaultValue: 'main', name: 'BRANCH', trim: true
     }
         
+    environment {
+        BRANCH_NAME = "${BRANCH}"
     stages{
         stage('BUILD') {
             steps{
                  sh '''
                     sleep 5
-                    echo "This is a BUILD stage "
+                    echo "This is a BUILD stage $BRANCH_NAME "
                 '''
             }
         }
@@ -25,5 +24,13 @@ pipeline {
                 '''
             }
         }
+        stage ('DEPLOY') {
+            steps{
+                sh '''
+                sleep 5
+                echo "This is DEPLOY stage"
+                '''
+            }
+        }
     }
-}
+  }
