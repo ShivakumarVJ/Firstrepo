@@ -1,8 +1,10 @@
 pipeline {
     agent any 
     parameters {
-        string defaultValue: 'Shivakumar', name: 'name', trim: true
-        string defaultValue: 'Hubli', name: 'location', trim: true
+        string defaultValue: 'shivu', description: 'Choose your name', name: 'name'
+        
+        string defaultValue: 'Hubli', description: 'Choose your location', name: 'location'
+
     }
     
     environment {
