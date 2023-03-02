@@ -6,17 +6,13 @@ pipeline {
         string defaultValue: 'Hubli', description: 'Choose your location', name: 'location'
 
     }
-    
-    environment {
-        BRANCH_NAME = "${BRANCH}"
-    }
-    
+        
     stages{
         stage('BUILD') {
             steps{
                  sh '''
                     sleep 5
-                    echo "This is a BUILD stage $BRANCH_NAME"
+                    echo "This is a BUILD stage "
                 '''
             }
         }
