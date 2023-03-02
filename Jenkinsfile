@@ -6,7 +6,9 @@ pipeline {
         
     environment {
         BRANCH_NAME = "${BRANCH}"
-    stages{
+    }
+    
+    stages {
         stage('BUILD') {
             steps{
                  sh '''
@@ -34,4 +36,3 @@ pipeline {
         }
     }
  }
-}
