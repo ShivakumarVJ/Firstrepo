@@ -1,11 +1,11 @@
 pipeline {
     agent any 
-     parameters {
-        string defaultValue: 'main', name: 'BRANCH', trim: true
+    parameters {
+        string defaultvalue: 'main', name: 'BRANCH', trim: true
     }
-
+    
     environment {
-        BRANCH_NAME = "${BRANCH}"
+        BRANCH_NAME= "${BRANCH}"
     }
     
     stages{
