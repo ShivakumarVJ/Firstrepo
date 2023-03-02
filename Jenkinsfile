@@ -1,7 +1,8 @@
 pipeline {
     agent any 
     parameters {
-        string defaultValue: 'main', name: 'BRANCH', trim: true
+        string defaultValue: 'Shivakumar', name: 'name', trim: true
+        string defaultValue: 'Hubli', name: 'location', trim: true
     }
     
     environment {
